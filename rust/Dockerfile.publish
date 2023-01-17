@@ -1,0 +1,14 @@
+FROM workspace:latest as builder
+WORKDIR /usr/src/rs/
+
+# NOTE: Token goes somewhere or uses env vars... 
+# EnvVars: 
+#   export: CARGO_NET_GIT_FETCH_WITH_CLI=true 
+#   export: CARGO_REGISTRIES_ARTIFACTORY_INDEX=something
+#   export: CARGO_REGISTRIES_ARTIFACTORY_TOKEN=something
+# 
+# From: https://doc.rust-lang.org/cargo/reference/environment-variables.html
+#   CARGO_REGISTRIES_<name>_INDEX — URL of a registry index, see registries.<name>.index.
+#   CARGO_REGISTRIES_<name>_TOKEN — Authentication token of a registry, see registries.
+
+ENTRYPOINT [ "/usr/local/cargo/bin/cargo" ]

@@ -1,0 +1,6 @@
+FROM rust:slim as builder
+COPY rs /usr/src/rs
+WORKDIR /usr/src/rs
+RUN apt update && apt-get install -y librust-openssl-dev protobuf-compiler cmake g++ git
+RUN cargo update
+RUN cargo build --workspace --release 
