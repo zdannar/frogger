@@ -1,7 +1,7 @@
 ### Docker build
 
 ```
-docker build --build-arg -t arty:latest GOPROXY=$GOPROXY .
+docker build --build-arg GOPROXY=$GOPROXY -t arty:latest .
 docker run arty:latest
 ```
 
